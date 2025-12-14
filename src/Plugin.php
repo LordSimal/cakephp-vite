@@ -3,24 +3,9 @@ declare(strict_types=1);
 
 namespace ViteHelper;
 
-use Cake\Core\BasePlugin;
-use Cake\Core\Configure;
-use Cake\Core\PluginApplicationInterface;
-
 /**
- * Plugin for ViteHelper
+ * @deprecated 2.5.0 Use ViteHelperPlugin instead
  */
-class Plugin extends BasePlugin
+class Plugin extends ViteHelperPlugin
 {
-    /**
-     * @inheritDoc
-     */
-    public function bootstrap(PluginApplicationInterface $app): void
-    {
-        parent::bootstrap($app);
-
-        if (file_exists(ROOT . DS . 'config' . DS . 'app_vite.php')) {
-            Configure::load('app_vite');
-        }
-    }
 }

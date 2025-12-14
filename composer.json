@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"require": {
 		"php": ">=8.1",
-		"cakephp/cakephp": "^5.0"
+		"cakephp/cakephp": "5.3.0-RC2"
 	},
 	"require-dev": {
-		"cakedc/cakephp-phpstan": "^3.0",
+		"cakedc/cakephp-phpstan": "^4.0",
 		"cakephp/cakephp-codesniffer": "^5.0.0",
-		"phpunit/phpunit": "^10.1.0"
+		"phpunit/phpunit": "^10.1.0 || ^11 || ^12"
 	},
 	"autoload": {
 		"psr-4": {
@@ -33,10 +33,10 @@
 	},
 	"scripts": {
 		"test": "phpunit",
-		"cs-check": "phpcs --colors --parallel=16 -p src/",
-		"cs-fix": "phpcbf --colors --parallel=16 -p src/",
+		"cs-check": "phpcs --colors --parallel=16 -p",
+		"cs-fix": "phpcbf --colors --parallel=16 -p",
 		"stan": "phpstan analyse",
-		"stan-setup": "cp composer.json composer.backup && composer require --dev phpstan/phpstan:^1.7.0 && mv composer.backup composer.json",
+		"stan-setup": "cp composer.json composer.backup && composer require --dev phpstan/phpstan:^2.1.0 && mv composer.backup composer.json",
 		"lowest-setup": "composer update --prefer-lowest --prefer-stable --prefer-dist --no-interaction && cp composer.json composer.backup && composer require --dev dereuromark/composer-prefer-lowest && mv composer.backup composer.json"
 	},
 	"prefer-stable": true
